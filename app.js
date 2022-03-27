@@ -13,7 +13,7 @@ hbs.registerPartials(__dirname + '/views/partials', function (err) {});
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
     res.render('home', {
         nombre: 'Adan',
         title: 'programming'
@@ -32,9 +32,9 @@ app.get('/elements', (req, res) => {
         nombre: 'Adan',
         title: 'programming'
     })
-})
+})*/
 
 app.get('*', (req, res) => {
-    res.send('404 not found')
+    res.sendFile(__dirname + '/public/index.html');
 })
 app.listen(port)
